@@ -1,0 +1,91 @@
+{% extends 'nevigation.html'%}
+{% load static %}
+{% block body %}
+
+{% ifequal error "no" %}
+   <script>
+	 alert('Signup Successfull...');
+	 window.location=('{% url 'login' %}');
+    </script>
+{% endifequal %}
+
+{% ifequal error "yes" %}
+ <script>
+	alert('Something went wrong, Try Again');
+ </script>
+{% endifequal %}
+
+<br><br><br>
+
+
+    <div class="container mt-5">
+    <div class="row">
+        <div class="col-sm-6">
+            <h2 class="text-center">Already have an account?</h2>
+            <HR>
+            <p>Click the LOGIN button to access your account.</p>
+            <a href="{% url 'login' %}" class="btn btn-danger text-white text-left mt-3">LOGIN</a>
+        </div>
+
+        <div class="col-sm-6">
+            <h2 class="text-center">SIGN UP</h2>
+            <HR>
+            <p>If you don't have an account,please sign up.</p>
+            <form method="POST" >
+                {% csrf_token %}
+
+                <label>First Name</label>
+
+
+                    <input type="text" class="form-control" placeholder="Enter your username name" name="username"  required>
+
+
+                <label>Contact</label>
+
+                    <input type="text" class="form-control" placeholder="Enter contact number" name="contact" required>
+
+
+                <label>Emaill Address</label>
+
+                    <input type="email" class="form-control" placeholder="Enter Email ID" name="emailid" required>
+
+
+                <label>Password</label>
+
+                    <input type="password" class="form-control" placeholder="Enter Password" name="password"  required>
+
+
+                <label>Area</label>
+
+                    <select class="form-control" name="area">
+                        <option value="Dhaka"> Dhaka</option>
+                        <option value="Rajshahi"> Rajshahi</option>
+                        <option value="Rangpur"> Rangpur</option>
+                        <option value="Khulna"> Khulna</option>
+                        <option value="Chittagong"> Chittagong</option>
+                        <option value="Barishal"> Barishal</option>
+                        <option value="Sylhet"> Sylhet</option>
+
+                    </select>
+
+
+                <label>Are you a farmer or an agriculturist?</label>
+
+                    <select class="form-control" name="role">
+                        <option value="Farmer">Farmer</option>
+                        <option value="Agriculturist">Agriculturist</option>
+
+                    </select>
+
+
+
+                <input type="submit" class="btn btn-danger mt-2" value="SUBMIT">
+            </form>
+
+        </div>
+    </div>
+    </div>
+
+
+
+{% endblock %}

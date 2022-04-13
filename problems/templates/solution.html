@@ -1,0 +1,33 @@
+{% extends 'user_navigation.html'%}
+{% load static %}
+{% block body %}
+
+ <div class="container card shadow mt-5">
+      <div class="card-body">
+   <h1 class="text-success text-center"></h1>
+         <h2 class="text-center">VIEW Solution</h2>
+            <HR>
+        <h3>
+            area: {{ problem_obj.area }}
+        </h3>
+        <h3>
+            field: {{ problem_obj.field }}
+        </h3>
+        <h3>
+            uploadingdate: {{ problem_obj.uploadingdate }}
+        </h3>
+        <h3>
+            problem description: {{ problem_obj.description }}
+        </h3>
+        <hr>
+        <h3>
+            solution: {{ solution_obj.solution }}
+        </h3>
+        <h3>
+            solver: {{ solution_obj.solver }}
+        </h3>
+                
+ </div>
+ </div>
+
+ {% endblock %}

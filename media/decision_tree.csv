@@ -1,0 +1,15 @@
+rec,age,income,student,credit_rating,buy's computer
+r1,<=30,High,no,fair,no
+r2,<=30,High,no,excellent,no
+r3,31?40,High,no,fair,yes
+r4,>40,medium,no,fair,yes
+r5,>40,low,yes,fair,yes
+r6,>40,low,yes,excellent,no
+r7,31?40,low,yes,excellent,yes
+r8,<=30,medium,no,fair,no
+r9,30,low,yes,fair,yes
+r10,>30,medium,yes,fair,yes
+r11,<=30,medium,yes,excellent,yes
+r12,31?40,medium,no,excellent,yes
+r13,31?40,High,yes,fair,yes
+r14,>40,medium,no,excellent,no

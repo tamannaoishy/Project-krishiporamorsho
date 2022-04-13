@@ -1,0 +1,52 @@
+{% extends 'user_navigation.html'%}
+{% load static %}
+{% block body %}
+
+ <div class="container card shadow mt-5">
+      <div class="card-body">
+   <h1 class="text-success text-center"></h1>
+         <h2 class="text-center">VIEW MY PROBLEMS</h2>
+            <HR>
+
+         <table class="table table-striped table-bordered" id="My Table">
+         <thead style="background-color: lightblue">
+         <tr>
+             <th> Serial no.</th>
+             <th> Uploading Date</th>
+             <th> Area</th>
+             <th> Field</th>
+             <th> Description</th>
+             <th> Documents</th>
+             <th> View solutions</th>
+             <th> Status</th>
+
+         </tr>
+         </thead>
+         {% for i in problems %}
+         <tbody>
+         <tr>
+             <td> {{ forloop.counter }}</td>
+              <td> {{i.uploadingdate}}</td>
+              <td> {{i.area}}</td>
+              <td> {{i.field}}</td>
+              <td> {{i.description }}</td>
+              <td><a href="{{i.problemfile.url}}" class="btn btn-success" download>Download</a></td>
+             {% if i.status == 'solved' %}
+              <td>
+                <a href="{%  url 'solution' pk=i.pk %}" class="btn btn-primary tetx-white">Explore!</a>
+              </td>
+              {% else %}
+              <td>Please wait until anyone provide any solution</td>
+              {% endif %}
+              <td> {{i.status}}</td>
+
+        </tr>
+  
+         {% endfor %}
+             </tbody>
+
+         </table>
+ </div>
+ </div>
+
+ {% endblock %}

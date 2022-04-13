@@ -1,0 +1,42 @@
+{% extends 'user_navigation.html'%}
+{% load static %}
+{% block body %}
+
+ <div class="container card shadow mt-5">
+      <div class="card-body">
+   <h1 class="text-success text-center"></h1>
+         <h2 class="text-center">VIEW SOLVED PROBLEMS</h2>
+            <HR>
+
+      <form method="post">
+          {% csrf_token %}
+          <label>Problems ID</label>
+          <input type="text" name="problemsid" class="form-control" value="{{ problem_obj.id }}" readonly>
+
+          <label>Status</label>
+          <select name="status" class="form-control">
+              <option value="Accept">ACCEPT</option>
+              <option value="Reject">SOLVED</option>
+          </select>
+          <br>
+          <input type="submit" value="SUBMIT" class="btn btn-primary form-control">
+
+      </form>
+      </div>
+ </div>
+
+{% ifequal error "no" %}
+   <script>
+	 alert('Status Updated Successfully...');
+     window.location=('{% url 'admin_problems' %}');
+
+    </script>
+{% endifequal %}
+
+{% ifequal error "yes" %}
+ <script>
+	alert('Something went wrong, Try Again');
+ </script>
+{% endifequal %}
+
+ {% endblock %}

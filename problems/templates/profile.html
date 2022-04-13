@@ -1,0 +1,54 @@
+{%  extends 'user_navigation.html' %}
+{% load static %}
+{% block body %}
+
+    <div class="container card shadow mt-5">
+    <div class="card-body">
+
+     <h2 class="text-center text-danger">PROFILE</h2>
+     <hr>
+     <DIV class="row">
+       <div class="col-md-6">
+         <b>Name : </b>
+       </div>
+       <div class="col-md-6" style="text-transform: capitalize">
+            {{data}}
+       </div>
+     </DIV>
+     <hr>
+
+     <DIV class="row">
+       <div class="col-md-6">
+         <b>Role : </b>
+       </div>
+       <div class="col-md-6" >
+              {{data.role}}
+       </div>
+     </DIV>
+     <hr>
+
+     <DIV class="row">
+       <div class="col-md-6">
+          <b>Contact : </b>
+       </div>
+       <div class="col-md-6" style="text-transform: capitalize">
+               {{data.contact}}
+       </div>
+     </DIV>
+     <hr>
+
+     <DIV class="row">
+       <div class="col-md-6">
+          <b>Area : </b>
+       </div>
+       <div class="col-md-6" style="text-transform: capitalize">
+               {{data.area}}
+       </div>
+     </DIV>
+     <!--<a href="#" class="btn btn-primary mt-4">Edit Profile</a> -->
+   </div>
+</div>
+
+
+
+{% endblock %}

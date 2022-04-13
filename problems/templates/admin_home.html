@@ -1,0 +1,57 @@
+{%  extends 'admin_navigation.html' %}
+{% load static %}
+{% block body %}
+    <style>
+.container1{
+ background-color: lightblue;
+ border-radius: 8px;
+}
+
+h2,h4{padding: 7px}
+
+
+
+   </style>
+
+<br><br>
+
+<div class="container mt-5">
+      <div class="row">
+
+
+          <div class="col-sm-3 text-center">
+                    <div class="container1">
+                        <h2 class="text-primary ">{{ pn }}</h2>
+                          <a href="{% url 'accepted_problems' %}" ><h4 class="text-dark"> Pending problems</h4></a>
+                    </div>
+
+          </div>
+
+
+
+          <div class="col-sm-3 text-center">
+                    <div class="container1">
+                        <h2 class="text-primary ">{{ sl }}</h2>
+                          <a href="{% url 'solved_problems' %}" ><h4 class="text-dark"> Solved problems</h4></a>
+                    </div>
+
+          </div>
+
+          <div class="col-sm-3 text-center">
+                    <div class="container1">
+                        <h2 class="text-primary ">{{ all }}</h2>
+                          <a href="{% url 'admin_problems' %}" ><h4 class="text-dark"> All problems</h4></a>
+                    </div>
+
+          </div>
+
+
+
+      </div>
+
+
+
+</div>
+
+
+{% endblock %}

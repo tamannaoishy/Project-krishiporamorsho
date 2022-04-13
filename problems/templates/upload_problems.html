@@ -1,0 +1,68 @@
+{% extends 'user_navigation.html'%}
+{% load static %}
+{% block body %}
+
+{% ifequal error "no" %}
+<script>
+	alert('Upload Successful...');
+	window.location=('{% url 'view_myproblems' %}');
+</script>
+{% endifequal %}
+
+{% ifequal error "yes" %}
+<script>
+	alert('Something went wrong, Try Again');
+</script>
+{% endifequal %}
+ <div class="container mt-5">
+    <div class="row">
+         <h2 class="text-center">UPLOAD PROBLEMS</h2>
+            <HR>
+                <div class="row">
+
+                    <div class="col-sm-9">
+
+				<form method="post" enctype="multipart/form-data">
+					{% csrf_token %}
+
+					<label> Area</label>
+						<select class="form-control" name="area">
+						  <option value="">--- Select Area ---</option>
+						  <option value="Dhaka">Dhaka</option>
+						  <option value="Rajshahi">Rajshahi</option>
+						  <option value="Rangpur">Rangpur</option>
+						  <option value="Khulna">Khulna</option>
+						  <option value="Chittagong">Chittagong</option>
+						  <option value="Barishal">Barishal</option>
+                          <option value="Sylhet">Sylhet</option>
+						</select>
+
+					<label> Subject</label>
+					<input type="text" class="form-control" placeholder="Enter Field" name="field">
+
+					<label>ProblemsFile</label>
+					<input type="file" name="problemfile" class="form-control">
+
+                    <label> File Type</label>
+					  <select class="form-control" name="filetype">
+						<option value="PDF">--- Select File ---</option>
+						<!--<option value="DOC/DOCX">DOC/DOCX</option> -->
+						<option value="Image">Image</option>
+
+					  </select>
+
+					<label>Description</label>
+						<textarea class="form-control" rows="3" name="description"></textarea>
+                    <input type="submit" class="btn btn-primary mt-2" value="Submit">
+
+				</form>
+			</div>
+
+
+
+
+
+    </div>
+ </div>
+ </div>
+ {% endblock %}
