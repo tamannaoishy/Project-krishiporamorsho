@@ -1,1 +1,1 @@
-web: gunicorn krishiporamorsho.wsgi --log-file -
+web: gunicorn krishiporamorsho.wsgi 
