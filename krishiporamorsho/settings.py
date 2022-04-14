@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-i3$!&0b3fw56j^krnr(1#$h=&0%!l7kkcdte_mi-yy1e8pc-0!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['krishiporamorsho.herokuapp.com']
+ALLOWED_HOSTS = ['krishiporamorsho.herokuapp.com','localhost']
 
 
 # Application definition
@@ -117,12 +117,6 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-PASSWORD_HASHERS = [
-    'django.contrib.auth.hashers.PBKDF2PasswordHasher',
-    'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
-    'django.contrib.auth.hashers.Argon2PasswordHasher',
-    'django.contrib.auth.hashers.BCryptSHA256PasswordHasher',
-]
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
