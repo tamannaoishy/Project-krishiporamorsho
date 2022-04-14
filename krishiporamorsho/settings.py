@@ -137,9 +137,9 @@ USE_TZ = True
 
 STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
 STATIC_URL = '/static/'
-#MEDIA_URL='/media/'
-#MEDIA_ROOT=os.path.join(BASE_DIR,'media ')
-#STATIC_ROOTSTORAGE ='whitenoise.storage.CompressedManifestStaticFilesStorage'
+MEDIA_URL='/media/'
+MEDIA_ROOT=os.path.join(BASE_DIR,'media ')
+STATIC_ROOTSTORAGE ='whitenoise.storage.CompressedManifestStaticFilesStorage'
 django_heroku.settings(locals())
 
 # Default primary key field type
