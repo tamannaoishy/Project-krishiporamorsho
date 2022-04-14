@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-i3$!&0b3fw56j^krnr(1#$h=&0%!l7kkcdte_mi-yy1e8pc-0!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1','krishiporamorsho.herokuapp.com']
+ALLOWED_HOSTS = ['krishiporamorsho.herokuapp.com']
 
 
 # Application definition
@@ -79,13 +79,24 @@ WSGI_APPLICATION = 'krishiporamorsho.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+#DATABASES = {
+#    'default': {
+#       'ENGINE': 'django.db.backends.sqlite3',
+#       'NAME': BASE_DIR / 'db.sqlite3',
+#    }
+#}
+
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+        'NAME':'d6sjo8q7tjrsbk',
+        'USER': 'fdseotwvlcqtfa',
+        'PASSWORD': '9c1e9f7458011fbb6f9495209771473203ac0eab31be767c7375dfbe617d8dc2',
+        'HOST': 'ec2-23-20-224-166.compute-1.amazonaws.com',
+        'PORT': '5432',  
+    }      
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -123,11 +134,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
+
+STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
 STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR / 'static'
-MEDIA_URL='/media/'
-MEDIA_ROOT=os.path.join(BASE_DIR,'media ')
-STATIC_ROOTSTORAGE ='whitenoise.storage.CompressedManifestStaticFilesStorage'
+#MEDIA_URL='/media/'
+#MEDIA_ROOT=os.path.join(BASE_DIR,'media ')
+#STATIC_ROOTSTORAGE ='whitenoise.storage.CompressedManifestStaticFilesStorage'
+django_heroku.settings(locals())
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
