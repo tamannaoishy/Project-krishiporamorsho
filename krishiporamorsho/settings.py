@@ -36,6 +36,7 @@ ALLOWED_HOSTS = ['krishiporamorsho.herokuapp.com','localhost']
 
 INSTALLED_APPS = [
     'problems',
+    'logentry_admin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
